@@ -1,0 +1,466 @@
+main, html, body, .container {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+label #sideBar_btn {
+    transition-property: color;
+    transition: transform 0.5s ease-out;
+    z-index: 1;
+    color: #fff;
+    position: fixed;
+    cursor: pointer;
+    left: 250px;
+}
+
+label #sideBar_btn:hover {
+    color: rgb(0, 153, 255);
+    transform: scale(1.25);
+    box-shadow: rgba(255, 255, 255, 0.24) 0px 5px 10px;
+}
+
+#check:checked~#sideBar {
+    width: 120px;
+    transition: all 0.5s ease;
+    transition-property: all;
+    white-space: nowrap;
+}
+
+#check:checked~#sideBar .nav-link.disabled {
+    display: none;
+}
+
+
+
+/* #check:checked~#sideBar a {
+    width: 60px;
+    padding-right: 0px;
+    margin-right: 15px;
+} */
+
+#check:checked~#sideBar a svg {
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+#check:checked~#bodyContent {
+    transition: all 0.5s ease;
+    transition-property: all;
+    flex-grow: 1;
+    white-space: nowrap;
+}
+
+#check:checked~#dropdownMenu {
+    min-width: inherit;
+    margin-left: 30% !important;
+}
+
+.dropdown-menu {
+    min-width: inherit;
+}
+
+
+
+#check:checked~li {
+    width: 10px !important;
+}
+
+
+#check:checked~a.dropdown-item {
+    margin-left: 15px !important;
+    border-bottom: 1px rgb(158, 158, 158) !important;
+    width: 30px !important;
+}
+
+#check:checked~#sideBar a h2 {
+    transition: display 0.5s;
+    display: none;
+}
+
+
+
+
+#check:checked~#sideBar a span.iconSpan {
+    display: none !important;
+    transition: display 0.5s;
+}
+
+
+.container {
+    transition: all 0.5s ease;
+    transition-property: all;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay {
+    transition: all 0.5s ease;
+    transition-property: all;
+    max-height: 200px;
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 50px;
+    position: relative;
+    color: white;
+    font-family: 'Lato';
+    position: relative;
+    text-align: center;
+    z-index: 0;
+}
+
+.nav-link {
+    transition: transform 0.5s ease-out
+}
+
+@keyframes clickedNavLink {
+    0% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.nav-link.active {
+    animation: 1s ease-out 0s 1 clickedNavLink;
+}
+
+.nav-link:hover {
+    background-color: dimgrey;
+    transform: scale(1.025);
+    box-shadow: rgba(255, 255, 255, 0.24) 0px 5px 10px
+}
+
+#sideBar {
+    /* position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 0 !important; */
+    /* align-self: flex-start; */
+    transition: all 0.5s ease;
+    transition-property: all;
+    flex-direction: column;
+    display: flex;
+}
+
+
+
+#bodyContent {
+    background: url(../images/getty_530363253_2000133420009280406_191621.jpg);
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    transition: all 0.5s ease;
+    transition-property: all;
+}
+
+#overlay {
+    width: 600px;
+    height: 280px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+#overlay2 {
+    width: 600px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+#signInBox {
+    border-radius: 15px;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
+}
+
+
+
+#hiddingRow {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.table {
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    clear: both;
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+.dtsp-dataTable {
+    width: 100% !important;
+    padding-right: 10%;
+}
+
+div.dtsp-verticalContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+div.dtsp-verticalContainer div.dtsp-verticalPanes,
+div.dtsp-verticalContainer div.container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+
+div.dtsp-verticalContainer div.dtsp-verticalPanes {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 26%;
+}
+
+
+
+div.dtsp-title {
+    margin-right: 0px !important;
+    /* margin-top: 13px !important; */
+}
+
+input.dtsp-search {
+    min-width: 0px !important;
+    padding-left: 0px !important;
+    margin: 0px !important;
+}
+
+div.dtsp-verticalContainer div.dtsp-verticalPanes div.dtsp-searchPanes {
+    flex-direction: column;
+    flex-basis: 0px;
+}
+
+div.dtsp-verticalContainer div.dtsp-verticalPanes div.dtsp-searchPanes div.dtsp-searchPane {
+    margin-right: 0px;
+}
+
+div.dtsp-verticalContainer div.container {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 60%;
+}
+
+div.dtsp-panesContainer {
+    border-collapse: collapse !important;
+    border-radius: 6px;
+    padding: 0px;
+}
+
+
+td.dt-control {
+    background: url('../images/arrow-down-square.svg') no-repeat center center;
+    cursor: pointer;
+}
+
+tr.shown td.dt-control {
+    background: url('../images/arrow-up-square.svg') no-repeat center center;
+}
+
+
+/* 
+div.dtsp-panesContainer:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.dtsp-title {
+    display: none;
+}
+
+div.dtsp-searchPanes {
+    display: none;
+} */
+
+
+
+@media all and (max-width:768px) {
+
+    #sideBar_btn {
+        display: none;
+    }
+
+    #liveToast {
+        position: fixed;
+        top: 50px !important;
+        right: 30px;
+        bottom: auto;
+    }
+
+    #bodyContent {
+        width: 100%;
+    }
+
+    #sideBar {
+        box-sizing: border-box;
+        position: fixed;
+        display: flex;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 10;
+        margin-bottom: 0px;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #dropdownMenuButton1 {
+        right: 0;
+        bottom: 17.5px;
+    }
+
+    ul:first-of-type {
+        margin-left: 10%;
+        justify-content: center;
+        align-self: center;
+    }
+
+    #registerButtons {
+        display: flex !important;
+        justify-content: space-between;
+        position: absolute !important;
+        right: 20px;
+        bottom: 35px;
+    }
+
+    ul li a.nav-link svg {
+        margin-right: 0;
+    }
+
+    ul li a.nav-link.nav-link.disabled {
+        visibility: hidden;
+        width: 170px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    ul li a.nav-link {
+        padding-right: 0;
+        margin-right: 15px;
+    }
+
+    #logo {
+        display: none;
+    }
+
+
+    #overlay {
+        width: 400px;
+        height: 190px;
+    }
+
+    #overlay2 {
+        width: 400px;
+        height: 150px;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    span.iconSpan {
+        display: none !important;
+    }
+
+    #mainContent {
+        overflow: auto;
+        margin-bottom: 80px !important;
+    }
+
+    a.page-link {
+        z-index: 0 !important;
+    }
+}
+
+@media all and (max-width:490px) {
+
+    #wordPopover {
+        top: 250px !important;
+    }
+
+    #liveToast {
+        width: 250px;
+    }
+
+    #overlay {
+        width: 300px;
+        position: inherit;
+        top: 20%;
+    }
+
+    #overlay2 {
+        visibility: hidden;
+        display: none !important;
+    }
+
+    #sideBar {
+        box-sizing: border-box;
+        position: fixed;
+        display: flex;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        margin-bottom: 0px;
+        z-index: 1;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+@media all and (max-width:980px) {
+    #sideBar_btn {
+        display: none;
+    }
+}
+
+
+@media all and (min-width:768px) {
+
+    #check:checked~span.iconSpan {
+        transition: display 0.5s;
+        display: none !important;
+    }
+
+
+    #sideBar {
+        height: 100vh;
+        position: sticky !important;
+        position: -webkit-sticky !important;
+        top: 0;
+        align-self: start;
+    }
+
+    ul.nav-pills {
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        align-self: start;
+    }
+}
