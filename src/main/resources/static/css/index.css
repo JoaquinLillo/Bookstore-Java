@@ -333,7 +333,7 @@ div.dtsp-searchPanes {
         bottom: 17.5px;
     }
 
-    ul:first-of-type {
+    #sideBar ul:first-of-type {
         margin-left: 10%;
         justify-content: center;
         align-self: center;
@@ -347,18 +347,18 @@ div.dtsp-searchPanes {
         bottom: 35px;
     }
 
-    ul li a.nav-link svg {
+    #sideBar ul li a.nav-link svg {
         margin-right: 0;
     }
 
-    ul li a.nav-link.nav-link.disabled {
+    #sideBar ul li a.nav-link.nav-link.disabled {
         visibility: hidden;
         width: 170px;
         margin-left: 0px;
         margin-right: 0px;
     }
 
-    ul li a.nav-link {
+    #sideBar ul li a.nav-link {
         padding-right: 0;
         margin-right: 15px;
     }
@@ -430,7 +430,17 @@ div.dtsp-searchPanes {
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
+        padding-left: 0% !important;
     }
+
+    #sideBar ul:first-of-type {
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        padding-left: 0%;
+        margin-left: 0%;
+    }
+
+
 }
 
 

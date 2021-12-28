@@ -102,7 +102,7 @@
               <path fill-rule="evenodd"
                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg>
-            <span  class="iconSpan ms-3">Profile</span>
+            <span class="iconSpan ms-3">Profile</span>
           </a>
           <ul class="dropdown-menu mb-2 ms-3" id="dropdownMenu" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item d-flex align-items-center text-center"
@@ -176,7 +176,8 @@
                 <div class="justify-content-start tab-content w-100" style="width: 100%">
                   <div class="tab-pane active" id="tab-table1">
                     <a class="btn btn-primary ms-auto mb-3 " style="top:45%;" href="/books/editbook" type="button">+</a>
-                    <table id="myTable1" class="table table-hover table-bordered bg-white text-center align-middle"
+                    <table id="myTable1"
+                      class="table nowrap responsive table-hover table-bordered bg-white text-center align-middle"
                       cellspacing="0" width="100%" style="border-collapse: collapse !important;">
                       <thead>
                         <tr>
@@ -214,8 +215,8 @@
                   <div class="tab-pane fade" id="tab-table2">
                     <a class="btn btn-primary col-auto ms-auto mb-3" href="/books/editeditorial" type="button">+</a>
                     <table id="myTable2"
-                      class="table table-hover table-bordered bg-white text-center align-middle w-100" cellspacing="0"
-                      style="width: 100% !important;border-collapse: collapse !important;">
+                      class="table nowrap table-hover responsive table-bordered bg-white text-center align-middle w-100"
+                      cellspacing="0" style="width: 100% !important;border-collapse: collapse !important;">
                       <thead>
                         <tr>
                           <th>Books</th>
@@ -243,7 +244,8 @@
                   </div>
                   <div class="tab-pane fade" id="tab-table3">
                     <a class="btn btn-primary col-auto ms-auto mb-3" href="/books/editauthor" type="button">+</a>
-                    <table id="myTable3" class="table table-hover table-bordered bg-white text-center align-middle"
+                    <table id="myTable3"
+                      class="table nowrap responsive table-hover table-bordered bg-white text-center align-middle"
                       cellspacing="0" width="100%" style="width:100% !important;border-collapse: collapse !important;">
                       <thead>
                         <tr>
@@ -269,7 +271,6 @@
                         </tr>
 
                       </tbody>
-                      <caption>Showing 300 authors</caption>
                     </table>
 
                   </div>
@@ -325,14 +326,11 @@
       return '<p>' + data[2] + '</p>'
     }
 
-    // $.fn.dataTable.SearchPanes.defaults.collapse = false;
-    // $.fn.dataTable.SearchPane.defaults.collapse = false;
-
     $(document).ready(function () {
       var table = $('#myTable1').DataTable({
-        "scrollX": true,
         responsive: true,
-        // dom: '<"dtsp-dataTable"frtip>',
+        "scrollX": true,
+
         dom: 'BPfrtip',
         buttons: [
           {
@@ -346,15 +344,14 @@
             },
           },
         ],
-        searchPanes: true,
-        // dom: '<"dtsp-verticalContainer"<"dtsp-verticalPanes"P><"dtsp-dataTable"frtip>>',
+        searchPanes: { cascadePanes: true, },
         columnDefs: [
 
           { className: "dt-control", "targets": [0] },
           {
             searchPanes: {
               cascadePanes: true,
-              layout: 'columns-1',
+              layout: 'columns-2',
               show: true, // It can be true/false
             },
             targets: [1], // Index of columns (starting at 0) that you want show/hide
@@ -363,13 +360,8 @@
 
       });
 
-      // table.searchPanes()
-      // $("div.dtsp-verticalPanes").append(table.searchPanes.container());
 
-      // table.columns.adjust().draw();
-      // table.searchPanes.resizePanes();
-
-      /////////////////////////////////////////////// COLLAPSE SCRIPT
+      
 
       $('#myTable1 tbody').on('click', 'td.dt-control', function () {
         var tr = $(this).closest('tr');
@@ -389,16 +381,8 @@
 
       ///////////////////////////////////////////////
 
-
-
-      // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      //   $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
-      // });
-
-      // $('#myTable1').DataTable();
-
-
     });
+
   </script>
 
   <script>
@@ -412,11 +396,7 @@
 
         "scrollX": true,
 
-
-        // dom: '<"dtsp-dataTable"frtip>',
         dom: 'BPfrtip',
-
-
         buttons: [
           {
             id: 'togglePanel',
@@ -432,9 +412,7 @@
           },
         ],
 
-        searchPanes: true,
-
-        // dom: '<"dtsp-verticalContainer"<"dtsp-verticalPanes"P><"dtsp-dataTable"frtip>>',
+        searchPanes: { cascadePanes: true, layout: 'columns-2'},
 
         columnDefs: [
 
@@ -450,7 +428,6 @@
         ]
 
       });
-
 
       /////////////////////////////
 
@@ -472,14 +449,8 @@
 
       /////////////////////////////
 
-
-      // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      //   $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
-      // });
-
-      // $('#myTable2').DataTable().draw();
-      // $('#myTable2').DataTable().searchPanes.rebuildPane();
     });
+
   </script>
 
   <script>
@@ -492,7 +463,6 @@
       var table = $('#myTable3').DataTable({
 
         "scrollX": true,
-
         // dom: '<"dtsp-dataTable"frtip>',
         dom: 'BPfrtip',
 
@@ -512,7 +482,7 @@
           },
         ],
 
-        searchPanes: true,
+        searchPanes: { cascadePanes: true, layout: 'columns-2'},
 
         // dom: '<"dtsp-verticalContainer"<"dtsp-verticalPanes"P><"dtsp-dataTable"frtip>>',
 
@@ -532,6 +502,7 @@
       });
 
 
+      
       /////////////////////////////
 
       $('#myTable3 tbody').on('click', 'td.dt-control', function () {
@@ -551,14 +522,6 @@
       });
 
       /////////////////////////////
-
-
-      // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      //   $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
-      // });
-
-      // $('#myTable3').DataTable().draw();
-      // $('#myTable3').DataTable().searchPanes.rebuildPane();
     });
   </script>
 
@@ -566,6 +529,7 @@
     jQuery(function () {
       jQuery('#togglePanel').click();
     });
+
   </script>
 
   <!-- THE OTHER SCRIPT -->

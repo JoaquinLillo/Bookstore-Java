@@ -87,8 +87,6 @@ public class PortalController {
         }
 
         String wordOfDay = ws.wordnikApi();
-        System.out.println("Esta es la palabra del día");
-        System.out.println(wordOfDay);
 
         model.put("wordOfDay", wordOfDay);
 

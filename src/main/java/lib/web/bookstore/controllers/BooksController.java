@@ -344,6 +344,8 @@ public class BooksController {
         }
     }
     
+    
+    
     @PostMapping("/delete-editorial")
     public String deleteEditorial(HttpSession session, @RequestParam int id) throws ErrorService {
         Client login = (Client) session.getAttribute("usersession");

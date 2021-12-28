@@ -82,9 +82,6 @@ public class LendingsController {
 
         Client login = (Client) session.getAttribute("usersession");
         
-        System.out.println("Este qle es el cliente: "+login.getName());
-        System.out.println("Este es su documento: "+login.getDocument());
-
         List<Lending> lendingsClient = ls.findClientLendings(login.getDocument());
 
         List<Lending> lendings = ls.listLendings();
@@ -132,6 +129,7 @@ public class LendingsController {
             lendingBookses.add(lwb);
         }
 
+        
         model.put("lendingByClient", lendingBClient);
         model.put("booksByLending", lendingBookses);
         model.put("lendings", lendings);
@@ -140,7 +138,7 @@ public class LendingsController {
 
         return "lendings.html";
     }
-
+ 
     @GetMapping("/editlending")
     public String editLending(HttpSession session, @RequestParam(required = false) String lendingId, @RequestParam(required = false) String action, ModelMap model) throws ErrorService {
 
@@ -185,7 +183,7 @@ public class LendingsController {
         for (String book : books) {
 
             Book book2 = bs.findBookTitle(book);
-            if (!lending.getBooks().contains(book2)) {
+            if (lending != null && !lending.getBooks().contains(book2) ) {
                 book2.setCopiesLended(book2.getCopiesLended() + 1);
                 book2.setCopiesRemaining();
             }

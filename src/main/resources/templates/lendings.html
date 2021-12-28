@@ -167,7 +167,7 @@
                                 <div class="d-flex justify-content-start tab-content ">
                                     <div class="tab-pane active" id="tab-table1">
                                         <table id="myTable1"
-                                            class="table table-hover table-bordered bg-white text-center align-middle w-100"
+                                            class="table responsive table-hover table-bordered bg-white text-center align-middle w-100"
                                             cellspacing="0" width="100%" style="border-collapse: collapse !important;">
                                             <thead>
                                                 <tr>
@@ -202,7 +202,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="tab-table2">
                                         <table id="myTable2"
-                                            class="table table-hover table-bordered bg-white text-center align-middle w-100"
+                                            class="table responsive table-hover table-bordered bg-white text-center align-middle w-100"
                                             cellspacing="0" width="100%"
                                             style="width: 100% !important;border-collapse: collapse !important;">
                                             <thead>
@@ -293,7 +293,7 @@
 
         $(document).ready(function () {
             var table = $('#myTable1').DataTable({
-                "scrollX": true,
+                responsive: true,
                 // dom: '<"dtsp-dataTable"frtip>',
                 dom: 'BPfrtip',
                 buttons: [
@@ -308,7 +308,7 @@
                         },
                     },
                 ],
-                searchPanes: true,
+                searchPanes: { cascadePanes: true },
                 // dom: '<"dtsp-verticalContainer"<"dtsp-verticalPanes"P><"dtsp-dataTable"frtip>>',
                 columnDefs: [
 
@@ -372,7 +372,7 @@
         $(document).ready(function () {
             var table = $('#myTable2').DataTable({
 
-                "scrollX": true,
+                responsive: true,
 
 
                 // dom: '<"dtsp-dataTable"frtip>',
@@ -393,7 +393,7 @@
                     },
                 ],
 
-                searchPanes: true,
+                searchPanes: { cascadePanes: true },
 
                 // dom: '<"dtsp-verticalContainer"<"dtsp-verticalPanes"P><"dtsp-dataTable"frtip>>',
 

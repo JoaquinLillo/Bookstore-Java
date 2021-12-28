@@ -17,8 +17,7 @@ public class Editorial {
         this.released = released;
     }
 
-    public Editorial() {
-        this.released = true;
+    public Editorial() {        
     }
 
     public Integer getId() {
